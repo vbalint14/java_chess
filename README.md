@@ -1,99 +1,98 @@
-# Hagyományos Sakk Játék Program
+# Traditional Chess Game Program
 
-## 1. Játékmódok
-A felhasználónak a sakk program különböző játékmódjait van lehetősége kipróbálnia, ezek:
+## 1. Game Modes
+The user can try different game modes in the chess program, namely:
 
-- **0 személyes játékmód**: A játszmában 2 AI* egymás ellen játszik
-- **1 személyes játékmód**: A játszmában 1 AI és 1 emberi felhasználó játszik egymás ellen
-- **2 személyes játékmód**: A játszmában 2 emberi felhasználó játszik egymás ellen
+- **0-player mode**: Two AIs* play against each other.
+- **1-player mode**: One AI and one human player play against each other.
+- **2-player mode**: Two human players play against each other.
 
-> *(AI = gép által irányított játékos)*
+> *(AI = computer-controlled player)*
 
-## 2. Játék szabályok
+## 2. Game Rules
 
-### a) A játék célja
-A sakk két játékos közötti stratégiai játék, amelynek célja az ellenfél királyának sakkmattolása.  
-A sakk-matt olyan állapot, amikor a király támadás alatt van, és nincs szabályos lépés, amellyel a támadást kivédhetnénk.
+### a) Objective of the Game
+Chess is a strategic game between two players, aiming to checkmate the opponent’s king.  
+Checkmate is a situation where the king is under attack and there is no legal move to escape the attack.
 
-### b) A játék menete
-- A játék során a játékosok felváltva lépnek. A világos kezd, majd a sötét következik.
-- Minden lépés során egy bábut mozgathatnak a sakktáblán a szabályoknak megfelelően.
+### b) Gameplay
+- Players take turns during the game. White moves first, then Black follows.
+- Each turn, a player can move one piece on the board according to the rules.
 
-### c) A bábuk és mozgásuk
-A játékot két játékos játssza világos (fehér) és sötét (fekete) bábukkal.  
-Minden játékos rendelkezik az alábbi bábukkal:
-- 1 db király
-- 1 db vezér (királynő)
-- 2 db bástya
-- 2 db futó
-- 2 db huszár (ló)
-- 8 db gyalog
+### c) Pieces and Their Movement
+The game is played between two players, one controlling the white pieces and the other the black pieces.  
+Each player has the following pieces:
+- 1 King
+- 1 Queen
+- 2 Rooks
+- 2 Bishops
+- 2 Knights
+- 8 Pawns
 
-A bábukat a (8x8 mezőből álló) sakktábla kezdő állás szerint helyezzük el: az első két sorban helyezkednek el a világos és sötét bábuk, a világos bábuk alul, a sötét bábuk pedig felül.
+The pieces are placed on an 8x8 chessboard in the starting position: the white pieces are on the bottom two ranks, and the black pieces are on the top two ranks.
 
-A királyok középen, a vezérek a király mellett, míg a többi bábu a sakktábla oldalai felé fokozatosan helyezkedik el.
+The kings are placed in the center, with queens next to them, and the other pieces positioned outward toward the board’s edges.
 
-#### i. Király:
-- A király egy mezőt léphet bármilyen irányba (függőlegesen, vízszintesen vagy átlósan).
-- A királyt nem szabad olyan mezőre lépni, ahol sakkban lenne (azaz ahol ellenfél bábujának támadása alatt áll).
-- **Sáncolás**: A király és egy bástya közötti speciális lépés. Akkor végezhető el, ha mindkét bábu nem lépett korábban, a király nincs sakkban, és a király és bástya között nem áll másik bábu. A király két mezőt lép a bástya felé, a bástya pedig a király mellett helyezkedik el.
+#### i. King:
+- The king can move one square in any direction (vertically, horizontally, or diagonally).
+- The king cannot move to a square that is under attack (i.e., would place itself in check).
+- **Castling**: A special move involving the king and a rook. It can only be performed if neither the king nor the rook has moved before, the king is not in check, and there are no pieces between them. The king moves two squares toward the rook, and the rook moves next to the king.
 
-#### ii. Vezér:
-- A vezér bármilyen irányban (vízszintesen, függőlegesen vagy átlósan) tetszőleges számú mezőt léphet.
-- Nem ugorhat át más bábukat.
+#### ii. Queen:
+- The queen can move any number of squares in any direction (vertically, horizontally, or diagonally).
+- It cannot jump over other pieces.
 
-#### iii. Bástya:
-- A bástya vízszintesen vagy függőlegesen tetszőleges számú mezőt léphet.
-- Nem ugorhat át más bábukat.
-- A bástya részt vehet a király sáncolásában.
+#### iii. Rook:
+- The rook can move any number of squares horizontally or vertically.
+- It cannot jump over other pieces.
+- The rook participates in castling with the king.
 
-#### iv. Futó:
-- A futó átlósan léphet tetszőleges számú mezőt.
-- Csak saját színű mezőkön mozoghat (az egyik mindig világos mezőkön, a másik mindig sötét mezőkön).
-- Nem ugorhat át más bábukat.
+#### iv. Bishop:
+- The bishop moves diagonally any number of squares.
+- It only moves on squares of its starting color (one bishop on light squares, the other on dark squares).
+- It cannot jump over other pieces.
 
-#### v. Huszár:
-- A huszár „L” alakú lépést tesz: két mezőt lép egy irányba (függőlegesen vagy vízszintesen), majd egyet jobbra vagy balra.
-- A huszár az egyetlen bábu, amely átugorhat más bábukat.
+#### v. Knight:
+- The knight moves in an "L" shape: two squares in one direction (vertically or horizontally) and then one square perpendicularly.
+- The knight is the only piece that can jump over other pieces.
 
-#### vi. Gyalog:
-- A gyalog egy mezőt léphet előre (csak a kezdő lépésénél léphet két mezőt).
-- Csak átlósan üthet (balra vagy jobbra egy mezőt).
-- **„En passant”** (fogás menet közben): Ha egy gyalog az ellenfél gyalogjának kezdő lépésére közvetlenül mellette landol, az ellenfél gyalogja azonnal megütheti őt, mintha csak egy mezőt lépett volna.
-- **Promóció**: Ha egy gyalog eléri a sakktábla túloldalát, bármelyik másik bábura (vezér, bástya, futó vagy huszár) cserélhető.
+#### vi. Pawn:
+- The pawn moves forward one square (or two squares on its first move).
+- It captures diagonally (one square forward to the left or right).
+- **En passant**: If an opposing pawn moves two squares forward from its starting position and lands next to the player’s pawn, it can be captured as if it had moved only one square forward.
+- **Promotion**: When a pawn reaches the opposite side of the board, it can be promoted to any other piece (queen, rook, bishop, or knight).
 
-### d) Sakk és sakk-matt
-- **Sakk**: Amikor egy játékos úgy lép, hogy az ellenfél királyát támadás alá helyezi. Az ellenfélnek azonnal ki kell védenie a sakkot (a király elmozdításával, a támadó bábu leütésével vagy más bábuval való blokkolással).
-- **Sakk-matt**: Ha a király sakkban van, és nincs szabályos lépés, amely kivédhetné a sakkot, a játék véget ér, és a sakk-mattot elszenvedő fél veszít.
+### d) Check and Checkmate
+- **Check**: A player places the opponent’s king under attack. The opponent must immediately make a move to remove the threat (by moving the king, capturing the attacking piece, or blocking the attack).
+- **Checkmate**: If the king is in check and there is no legal move to escape it, the game ends, and the player suffering checkmate loses.
 
-### e) Döntetlenek
-- **Patt**: Amikor a játékos lépésénél nincs szabályos lépés, de a király nincs sakkban. Ilyenkor a játék döntetlennel ér véget.
-- **Draw Offer**: Ha csak a két király van már életben, akkor automatikus döntetlen lehetőség.
-- **Megállapodás**: A játékosok kölcsönös megegyezéssel döntetlent köthetnek.
+### e) Draws
+- **Stalemate**: When a player has no legal moves but is not in check, the game ends in a draw.
+- **Draw Offer**: If only the two kings remain, an automatic draw can be declared.
+- **Agreement**: Players can agree to a draw by mutual consent.
 
-### f) Feladás
-- A játékos bármikor feladhatja a játékot, ha úgy érzi, nem tud nyerni. Ebben az esetben az ellenfél nyer.
+### f) Resignation
+- A player can resign at any time if they believe they cannot win. In this case, the opponent wins.
 
-## 3. A program funkciói
+## 3. Program Features
 
-### a) Felhasználói felület (GUI)
-- **Tábla és Bábuk Megjelenítése**: A sakktábla és bábuk színkódolást alkalmaznak (világos és sötét mezők, világos és sötét bábuk).
-- **Mozgatható Bábuk Kijelzése**: A kiválasztott bábu lehetséges lépéseit a program vizuálisan is kiemeli, például pontokkal vagy színes mezőkkel.
-- **Játékmód Kiválasztása**: Az induló menüben választható a játékmód (0-, 1-, vagy 2-személyes), illetve új játék indítása vagy mentett játék betöltése.
+### a) Graphical User Interface (GUI)
+- **Board and Pieces Display**: The chessboard and pieces are color-coded (light and dark squares, light and dark pieces).
+- **Highlighting Movable Pieces**: The program visually highlights the possible moves for a selected piece, for example, with dots or colored squares.
+- **Game Mode Selection**: The start menu allows choosing the game mode (0-, 1-, or 2-player) and starting a new game or loading a saved game.
 
-### b) Mentés és Betöltés
-- **Fájlformátum és Mentési Struktúra**: A játékállás mentése például `.json` vagy `.txt` formátumban történik, amely tartalmazza a sakktábla aktuális állását, a lépések számát és a játékosok típusát.
-- **Betöltés**: Egy mentett fájlból történik, az adott játszma ott folytatódhat, ahol félbeszakadt (mentésre került).
+### b) Saving and Loading
+- **File Format and Save Structure**: The game state is saved in a file (e.g., `.json` or `.txt`) containing the current board state, move count, and player types.
+- **Loading**: Saved games can be loaded and continued from where they left off.
 
-### c) AI Játékmenet
-- **AI Szintek és Beállítások**: Az AI egyszerű véletlenszerű lépések mellett opcionálisan összetettebb stratégiát is alkalmazhat.
+### c) AI Gameplay
+- **AI Levels and Settings**: The AI can perform simple random moves or optionally use more complex strategies.
 
-### d) Hibakezelés
-- **Érvénytelen Lépések Kezelése**: A program figyelmezteti a felhasználót, ha érvénytelen lépést próbál végrehajtani, és nem hajtja végre azt.
-- **Sakk-matt és Patt Automatikus Ellenőrzése**: A program minden lépés után automatikusan ellenőrzi a sakk-matt vagy patt állapotot, és jelzi, ha ilyen helyzet áll fenn.
+### d) Error Handling
+- **Handling Invalid Moves**: The program warns the player if an invalid move is attempted and does not execute it.
+- **Automatic Checkmate and Stalemate Detection**: The program automatically checks for checkmate or stalemate after every move and notifies the players if such a situation occurs.
 
-### e) Lépésszámláló és Lépéstörténet
-- **Lépések rögzítése**: Egy oldalsó panelen vagy külön menüben, hogy a játékos visszanézhesse a korábbi lépéseket, amely gyakorlás és tanulás céljából hasznos.
+### e) Move Counter and Move History
+- **Recording Moves**: Moves are recorded in a side panel or a separate menu, allowing players to review previous moves, which is useful for practice and learning.
 
 ---
-
