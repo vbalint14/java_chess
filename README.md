@@ -1,8 +1,5 @@
 # Hagyományos Sakk Játék Program
 
-**Specifikáció**  
-**Készítette:** Venter Bálint
-
 ## 1. Játékmódok
 A felhasználónak a sakk program különböző játékmódjait van lehetősége kipróbálnia, ezek:
 
