@@ -51,7 +51,7 @@ public class ChessGame {
                             });
                             frame.dispose();
                         } catch (Exception ex) {
-                            JOptionPane.showMessageDialog(frame, "Hiba történt a játék indítása közben.",
+                            JOptionPane.showMessageDialog(frame, "An error occurred while starting the game.",
                                     "Hiba", JOptionPane.ERROR_MESSAGE);
                             ex.printStackTrace();
                         }
@@ -62,7 +62,7 @@ public class ChessGame {
                             });
                             frame.dispose(); 
                         } catch (Exception ex) {
-                            JOptionPane.showMessageDialog(frame, "Hiba történt a játék indítása közben.",
+                            JOptionPane.showMessageDialog(frame, "An error occurred while starting the game.",
                                     "Hiba", JOptionPane.ERROR_MESSAGE);
                             ex.printStackTrace();
                         }
