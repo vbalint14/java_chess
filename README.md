@@ -1,4 +1,4 @@
-# Traditional Chess Game Program
+# Chess Game
 
 ## 1. Game Modes
 The user can try different game modes in the chess program, namely:
